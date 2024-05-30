@@ -39,7 +39,7 @@
         state: link
         mode: "740"
       with_items:
-          - { src: "{{~/git/dotFiles/custScripts/}}", dest: "{{~/.config/custScripts/}}" }
+          - { src: "{{/home/zyzyx/git/dotFiles/custScripts/}}", dest: "{{/home/zyzyx/.config/custScripts/}}" }
           - { src: '{{~/git/dotFiles/gitconfig/gitconfig}}', dest: '{{~/.gitconfig/}}' }
           - { src: ~/git/dotFiles/starship/starship.toml, dest: ~/.config/starship.toml }
           - { src: "~/git/dotFiles/terminator/", dest: "~/.config/terminator"}
