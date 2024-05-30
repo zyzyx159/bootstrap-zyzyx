@@ -51,5 +51,5 @@
     - name: tmux plugin manager dotFiles
       ansible.builtin.git:
         repo: git@github.com:tmux-plugins/tpm.git
-        dest: /home/zyzyx/.config/tmux/plugins/
+        dest: /home/zyzyx/.config/tmux/plugins/tpm
         depth: 1
