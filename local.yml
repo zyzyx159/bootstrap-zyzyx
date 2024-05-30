@@ -42,12 +42,12 @@
         state: link
         mode: "740"
       with_items:
-          - { src: /home/zyzyx/git/dotFiles/custScripts/, dest: /home/zyzyx/.config/custScripts/ }
+          - { src: /home/zyzyx/git/dotFiles/custScripts, dest: /home/zyzyx/.config/custScripts }
           - { src: ~/git/dotFiles/gitconfig/gitconfig, dest: ~/.gitconfig }
           - { src: ~/git/dotFiles/starship/starship.toml, dest: ~/.config/starship.toml }
-          - { src: "~/git/dotFiles/terminator/", dest: "~/.config/terminator/"}
-          - { src: "~/git/dotFiles/tmux/", dest: "~/.config/tmux/"}
-          - { src: "~/git/dotFiles/zsh/zshrc", dest: "~/.zshrc"}
+          - { src: "~/git/dotFiles/terminator", dest: "~/.config/terminator" }
+          - { src: "~/git/dotFiles/tmux", dest: "~/.config/tmux" }
+          - { src: "~/git/dotFiles/zsh/zshrc", dest: "~/.zshrc" }
     - name: tmux plugin manager dotFiles
       ansible.builtin.git:
         repo: git@github.com:tmux-plugins/tpm.git
