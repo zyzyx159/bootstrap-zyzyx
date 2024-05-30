@@ -29,11 +29,11 @@
         path: "{{ item }}"
         state: absent
       with_items:
-        - ~/.config/custScripts/
+        - ~/.config/custScripts
         - ~/.gitconfig
         - ~/.config/starship.toml
-        - ~/.config/terminator/
-        - ~/.config/tmux/
+        - ~/.config/terminator
+        - ~/.config/tmux
         - ~/.zshrc
     - name: link dot files
       file:
