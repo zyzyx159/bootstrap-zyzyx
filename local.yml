@@ -22,6 +22,8 @@
         repo: https://github.com/zyzyx159/dotFiles
         dest: /home/zyzyx/git/dotFiles
         depth: 1
+        clone: yes
+        update: yes
     - name: delete original dot files
       file:
         path: "{{ item }}"
