@@ -8,7 +8,7 @@
         name: zyzyx
         shell: /bin/zsh
     - name: make git folder
-      ansible.builtin.file:
+      file:
         path: "{{ item.folder }}"
         owner: zyzyx
         group: zyzyx
