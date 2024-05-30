@@ -34,7 +34,7 @@
       file:
         src: "{{ item.path }}"
         dest: "{{ item.dest }}"
-        with_items:
+        loop:
           - { path: "~/git/dotFiles/custScripts/", dest: "~/.config/custScripts/" }
           - { path: "~/git/dotFiles/gitconfig/gitconfig", dest: "~/.gitconfig/" }
           - { path: "~/git/dotFiles/starship/starship.toml", dest: "~/.config/starship.toml"}
