@@ -34,6 +34,10 @@
       file:
         src: "{{ item.src }}"
         dest: "{{ item.dest }}"
+        owner: zyzyx
+        group: zyzyx
+        state: link
+        mode: "740"
       with_items:
           - { src: "~/git/dotFiles/custScripts/", dest: "~/.config/custScripts/" }
           - { src: "~/git/dotFiles/gitconfig/gitconfig", dest: "~/.gitconfig/" }
@@ -41,10 +45,6 @@
           - { src: "~/git/dotFiles/terminator/", dest: "~/.config/terminator"}
           - { src: "~/git/dotFiles/tmux/", dest: "~/.config/tmux/"}
           - { src: "~/git/dotFiles/zsh/zshrc", dest: "~/.zshrc"}
-        owner: zyzyx
-        group: zyzyx
-        state: link
-        mode: "740"
     - name: tmux plugin manager dotFiles
       ansible.builtin.git:
         repo: git@github.com:tmux-plugins/tpm.git
