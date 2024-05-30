@@ -1,0 +1,52 @@
+---
+- name: "run local"
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: change shell
+      user:
+        name: zyzyx
+        shell: /bin/zsh
+    - name: make git folder
+      ansible.builtin.file:
+        path: /home/zyzyx/git/
+        owner: zyzyx
+        group: zyzyx
+        state: directory
+        mode: "0770"
+    - name: clone dotFiles
+      ansible.builtin.git:
+        repo: https://github.com/zyzyx159/dotFiles
+        dest: /home/zyzyx/git/dotFiles
+        depth: 1
+    - name: delete original dot files
+      file:
+        path: "{{ item }}"
+        state: absent
+      with_items:
+        - ~/.config/custScripts/
+        - ~/.gitconfig
+        - ~/.config/starship.toml
+        - ~/.config/terminator/
+        - ~/.config/tmux/
+        - ~/.zshrc
+    - name: link dot files
+      file:
+        src: "{{ item.path }}"
+        dest: "{{ item.dest }}"
+        with_items:
+          - { path: "~/git/dotFiles/custScripts/", dest: "~/.config/custScripts/" }
+          - { path: "~/git/dotFiles/gitconfig/gitconfig", dest: "~/.gitconfig/" }
+          - { path: "~/git/dotFiles/starship/starship.toml", dest: "~/.config/starship.toml"}
+          - { path: "~/git/dotFiles/terminator/", dest: "~/.config/terminator"}
+          - { path: "~/git/dotFiles/tmux/", dest: "~/.config/tmux/"}
+          - { path: "~/git/dotFiles/zsh/zshrc", dest: "~/.zshrc"}
+        owner: zyzyx
+        group: zyzyx
+        state: link
+        mode: "740"
+    - name: tmux plugin manager dotFiles
+      ansible.builtin.git:
+        repo: git@github.com:tmux-plugins/tpm.git
+        dest: /home/zyzyx/.config/tmux/plugins/
+        depth: 1
