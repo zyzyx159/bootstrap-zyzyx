@@ -14,7 +14,7 @@
         group: zyzyx
         state: directory
         mode: "0770"
-      with_item:
+      with_items:
         - { folder: /home/zyzyx/git/ }
         - { folder: /home/zyzyx/.config/ }
     - name: clone dotFiles
