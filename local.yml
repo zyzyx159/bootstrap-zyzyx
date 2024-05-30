@@ -40,7 +40,7 @@
         mode: "740"
       with_items:
           - { src: /home/zyzyx/git/dotFiles/custScripts/, dest: /home/zyzyx/.config/custScripts/ }
-          - { src: '{{~/git/dotFiles/gitconfig/gitconfig}}', dest: '{{~/.gitconfig/}}' }
+          - { src: ~/git/dotFiles/gitconfig/gitconfig, dest: ~/.gitconfig/ }
           - { src: ~/git/dotFiles/starship/starship.toml, dest: ~/.config/starship.toml }
           - { src: "~/git/dotFiles/terminator/", dest: "~/.config/terminator"}
           - { src: "~/git/dotFiles/tmux/", dest: "~/.config/tmux/"}
