@@ -32,15 +32,15 @@
         - ~/.zshrc
     - name: link dot files
       file:
-        src: "{{ item.path }}"
+        src: "{{ item.src }}"
         dest: "{{ item.dest }}"
         loop:
-          - { path: "~/git/dotFiles/custScripts/", dest: "~/.config/custScripts/" }
-          - { path: "~/git/dotFiles/gitconfig/gitconfig", dest: "~/.gitconfig/" }
-          - { path: "~/git/dotFiles/starship/starship.toml", dest: "~/.config/starship.toml"}
-          - { path: "~/git/dotFiles/terminator/", dest: "~/.config/terminator"}
-          - { path: "~/git/dotFiles/tmux/", dest: "~/.config/tmux/"}
-          - { path: "~/git/dotFiles/zsh/zshrc", dest: "~/.zshrc"}
+          - { src: "~/git/dotFiles/custScripts/", dest: "~/.config/custScripts/" }
+          - { src: "~/git/dotFiles/gitconfig/gitconfig", dest: "~/.gitconfig/" }
+          - { src: "~/git/dotFiles/starship/starship.toml", dest: "~/.config/starship.toml"}
+          - { src: "~/git/dotFiles/terminator/", dest: "~/.config/terminator"}
+          - { src: "~/git/dotFiles/tmux/", dest: "~/.config/tmux/"}
+          - { src: "~/git/dotFiles/zsh/zshrc", dest: "~/.zshrc"}
         owner: zyzyx
         group: zyzyx
         state: link
