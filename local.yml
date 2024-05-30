@@ -9,14 +9,14 @@
         shell: /bin/zsh
     - name: make git folder
       ansible.builtin.file:
-        path: "{{item}}"
+        path: "{{ item.folder }}"
         owner: zyzyx
         group: zyzyx
         state: directory
         mode: "0770"
       with_item:
-        - {/home/zyzyx/git/}
-        - {/home/zyzyx/.config/}
+        - { folder: /home/zyzyx/git/ }
+        - { folder: /home/zyzyx/.config/ }
     - name: clone dotFiles
       ansible.builtin.git:
         repo: https://github.com/zyzyx159/dotFiles
